@@ -122,5 +122,10 @@ namespace StopwatchTest
             ButStop.Enabled = false;
             ButStart.Enabled = true;
         }
+
+        private void ButClear_Click(object sender, EventArgs e)
+        {
+            LstStatus.Items.Clear();
+        }
     }
 }

@@ -38,6 +38,7 @@
             this.ButReadTicks = new System.Windows.Forms.Button();
             this.ButReset = new System.Windows.Forms.Button();
             this.ButRestart = new System.Windows.Forms.Button();
+            this.ButClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LstStatus
@@ -47,15 +48,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LstStatus.FormattingEnabled = true;
             this.LstStatus.Location = new System.Drawing.Point(8, 97);
-            this.LstStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LstStatus.Margin = new System.Windows.Forms.Padding(2);
             this.LstStatus.Name = "LstStatus";
-            this.LstStatus.Size = new System.Drawing.Size(320, 82);
+            this.LstStatus.Size = new System.Drawing.Size(320, 147);
             this.LstStatus.TabIndex = 8;
             // 
             // ButStart
             // 
             this.ButStart.Location = new System.Drawing.Point(8, 31);
-            this.ButStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButStart.Margin = new System.Windows.Forms.Padding(2);
             this.ButStart.Name = "ButStart";
             this.ButStart.Size = new System.Drawing.Size(50, 28);
             this.ButStart.TabIndex = 1;
@@ -67,7 +68,7 @@
             // 
             this.ButStop.Enabled = false;
             this.ButStop.Location = new System.Drawing.Point(62, 31);
-            this.ButStop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButStop.Margin = new System.Windows.Forms.Padding(2);
             this.ButStop.Name = "ButStop";
             this.ButStop.Size = new System.Drawing.Size(50, 28);
             this.ButStop.TabIndex = 2;
@@ -88,7 +89,7 @@
             // ButRead
             // 
             this.ButRead.Location = new System.Drawing.Point(8, 63);
-            this.ButRead.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButRead.Margin = new System.Windows.Forms.Padding(2);
             this.ButRead.Name = "ButRead";
             this.ButRead.Size = new System.Drawing.Size(104, 28);
             this.ButRead.TabIndex = 5;
@@ -140,11 +141,24 @@
             this.ButRestart.UseVisualStyleBackColor = true;
             this.ButRestart.Click += new System.EventHandler(this.ButRestart_Click);
             // 
+            // ButClear
+            // 
+            this.ButClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ButClear.Location = new System.Drawing.Point(8, 246);
+            this.ButClear.Margin = new System.Windows.Forms.Padding(2);
+            this.ButClear.Name = "ButClear";
+            this.ButClear.Size = new System.Drawing.Size(50, 28);
+            this.ButClear.TabIndex = 9;
+            this.ButClear.Text = "Clear";
+            this.ButClear.UseVisualStyleBackColor = true;
+            this.ButClear.Click += new System.EventHandler(this.ButClear_Click);
+            // 
             // FrmStopwatchTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 186);
+            this.ClientSize = new System.Drawing.Size(334, 285);
+            this.Controls.Add(this.ButClear);
             this.Controls.Add(this.ButReset);
             this.Controls.Add(this.ButRestart);
             this.Controls.Add(this.ButReadTicks);
@@ -155,7 +169,8 @@
             this.Controls.Add(this.ButStart);
             this.Controls.Add(this.LstStatus);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(250, 250);
             this.Name = "FrmStopwatchTest";
             this.Text = "Stopwatch Test";
             this.Load += new System.EventHandler(this.FrmStopwatchTest_Load);
@@ -175,6 +190,7 @@
         private System.Windows.Forms.Button ButReadTicks;
         private System.Windows.Forms.Button ButReset;
         private System.Windows.Forms.Button ButRestart;
+        private System.Windows.Forms.Button ButClear;
     }
 }
 
