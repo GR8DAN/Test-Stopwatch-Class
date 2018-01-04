@@ -1,22 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
+using Ticker;
 
 namespace StopwatchTest
 {
     public partial class FrmStopwatchTest : Form
     {
-        Stopwatch sw = new Stopwatch();
+        Stopwatch sw = new Stopwatch(); //Normal Stopwatch
+        Tick tick;   //For background ticking
 
         public FrmStopwatchTest()
         {
             InitializeComponent();
+            tick = new Tick(TickHandler);
         }
 
         private void FrmStopwatchTest_Load(object sender, EventArgs e)
@@ -123,9 +121,51 @@ namespace StopwatchTest
             ButStart.Enabled = true;
         }
 
+        //Clear list box
         private void ButClear_Click(object sender, EventArgs e)
         {
             LstStatus.Items.Clear();
         }
+
+        #region Background Ticking
+        void ToggleUITick()
+        {
+            if (RdoToggle.Checked)
+                RdoToggle.Checked = false;
+            else
+                RdoToggle.Checked = true;
+        }
+
+        //Called on a tick
+        void TickHandler(object sender, ProgressChangedEventArgs e)
+        {
+            ToggleUITick();
+        }
+
+        private void ButTicker_Click(object sender, EventArgs e)
+        {
+            if (ButTicker.Text == "Run")
+            {
+                ButTicker.Text = "Stop";
+
+                int buff = 0;
+
+                if (int.TryParse(TxtTickTime.Text, out buff))
+                {
+                    tick.Milliseconds = buff;
+                }
+                else
+                {
+                    tick.Milliseconds = 1;
+                }
+                tick.Start();
+            }
+            else
+            {
+                tick.Stop();
+                ButTicker.Text = "Run";
+            }
+        }
+        #endregion
     }
 }

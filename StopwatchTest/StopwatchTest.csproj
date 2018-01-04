@@ -79,5 +79,11 @@
   <ItemGroup>
     <Content Include="stopwatch.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ticker\Ticker.csproj">
+      <Project>{8aedc57a-c454-4ba1-a043-0df7deee691c}</Project>
+      <Name>Ticker</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -39,6 +39,13 @@
             this.ButReset = new System.Windows.Forms.Button();
             this.ButRestart = new System.Windows.Forms.Button();
             this.ButClear = new System.Windows.Forms.Button();
+            this.GrpBackground = new System.Windows.Forms.GroupBox();
+            this.RdoToggle = new System.Windows.Forms.RadioButton();
+            this.LblMilliseconds = new System.Windows.Forms.Label();
+            this.TxtTickTime = new System.Windows.Forms.TextBox();
+            this.ButTicker = new System.Windows.Forms.Button();
+            this.BgrdWorker = new System.ComponentModel.BackgroundWorker();
+            this.GrpBackground.SuspendLayout();
             this.SuspendLayout();
             // 
             // LstStatus
@@ -47,18 +54,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LstStatus.FormattingEnabled = true;
-            this.LstStatus.Location = new System.Drawing.Point(8, 97);
-            this.LstStatus.Margin = new System.Windows.Forms.Padding(2);
+            this.LstStatus.ItemHeight = 20;
+            this.LstStatus.Location = new System.Drawing.Point(12, 149);
             this.LstStatus.Name = "LstStatus";
-            this.LstStatus.Size = new System.Drawing.Size(320, 147);
+            this.LstStatus.Size = new System.Drawing.Size(609, 224);
             this.LstStatus.TabIndex = 8;
             // 
             // ButStart
             // 
-            this.ButStart.Location = new System.Drawing.Point(8, 31);
-            this.ButStart.Margin = new System.Windows.Forms.Padding(2);
+            this.ButStart.Location = new System.Drawing.Point(12, 48);
             this.ButStart.Name = "ButStart";
-            this.ButStart.Size = new System.Drawing.Size(50, 28);
+            this.ButStart.Size = new System.Drawing.Size(75, 43);
             this.ButStart.TabIndex = 1;
             this.ButStart.Text = "Start";
             this.ButStart.UseVisualStyleBackColor = true;
@@ -67,10 +73,9 @@
             // ButStop
             // 
             this.ButStop.Enabled = false;
-            this.ButStop.Location = new System.Drawing.Point(62, 31);
-            this.ButStop.Margin = new System.Windows.Forms.Padding(2);
+            this.ButStop.Location = new System.Drawing.Point(93, 48);
             this.ButStop.Name = "ButStop";
-            this.ButStop.Size = new System.Drawing.Size(50, 28);
+            this.ButStop.Size = new System.Drawing.Size(75, 43);
             this.ButStop.TabIndex = 2;
             this.ButStop.Text = "Stop";
             this.ButStop.UseVisualStyleBackColor = true;
@@ -79,19 +84,17 @@
             // LblStopwatchInfo
             // 
             this.LblStopwatchInfo.AutoSize = true;
-            this.LblStopwatchInfo.Location = new System.Drawing.Point(9, 8);
-            this.LblStopwatchInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblStopwatchInfo.Location = new System.Drawing.Point(14, 12);
             this.LblStopwatchInfo.Name = "LblStopwatchInfo";
-            this.LblStopwatchInfo.Size = new System.Drawing.Size(133, 13);
+            this.LblStopwatchInfo.Size = new System.Drawing.Size(197, 20);
             this.LblStopwatchInfo.TabIndex = 0;
             this.LblStopwatchInfo.Text = "Using the Stopwatch class";
             // 
             // ButRead
             // 
-            this.ButRead.Location = new System.Drawing.Point(8, 63);
-            this.ButRead.Margin = new System.Windows.Forms.Padding(2);
+            this.ButRead.Location = new System.Drawing.Point(12, 97);
             this.ButRead.Name = "ButRead";
-            this.ButRead.Size = new System.Drawing.Size(104, 28);
+            this.ButRead.Size = new System.Drawing.Size(156, 43);
             this.ButRead.TabIndex = 5;
             this.ButRead.Text = "Read Interval";
             this.ButRead.UseVisualStyleBackColor = true;
@@ -99,10 +102,9 @@
             // 
             // ButReadMilli
             // 
-            this.ButReadMilli.Location = new System.Drawing.Point(116, 63);
-            this.ButReadMilli.Margin = new System.Windows.Forms.Padding(2);
+            this.ButReadMilli.Location = new System.Drawing.Point(174, 97);
             this.ButReadMilli.Name = "ButReadMilli";
-            this.ButReadMilli.Size = new System.Drawing.Size(104, 28);
+            this.ButReadMilli.Size = new System.Drawing.Size(156, 43);
             this.ButReadMilli.TabIndex = 6;
             this.ButReadMilli.Text = "Read Milliseconds";
             this.ButReadMilli.UseVisualStyleBackColor = true;
@@ -110,10 +112,9 @@
             // 
             // ButReadTicks
             // 
-            this.ButReadTicks.Location = new System.Drawing.Point(224, 63);
-            this.ButReadTicks.Margin = new System.Windows.Forms.Padding(2);
+            this.ButReadTicks.Location = new System.Drawing.Point(336, 97);
             this.ButReadTicks.Name = "ButReadTicks";
-            this.ButReadTicks.Size = new System.Drawing.Size(104, 28);
+            this.ButReadTicks.Size = new System.Drawing.Size(156, 43);
             this.ButReadTicks.TabIndex = 7;
             this.ButReadTicks.Text = "Read Ticks";
             this.ButReadTicks.UseVisualStyleBackColor = true;
@@ -121,10 +122,9 @@
             // 
             // ButReset
             // 
-            this.ButReset.Location = new System.Drawing.Point(170, 31);
-            this.ButReset.Margin = new System.Windows.Forms.Padding(2);
+            this.ButReset.Location = new System.Drawing.Point(255, 48);
             this.ButReset.Name = "ButReset";
-            this.ButReset.Size = new System.Drawing.Size(50, 28);
+            this.ButReset.Size = new System.Drawing.Size(75, 43);
             this.ButReset.TabIndex = 4;
             this.ButReset.Text = "Reset";
             this.ButReset.UseVisualStyleBackColor = true;
@@ -132,10 +132,9 @@
             // 
             // ButRestart
             // 
-            this.ButRestart.Location = new System.Drawing.Point(116, 31);
-            this.ButRestart.Margin = new System.Windows.Forms.Padding(2);
+            this.ButRestart.Location = new System.Drawing.Point(174, 48);
             this.ButRestart.Name = "ButRestart";
-            this.ButRestart.Size = new System.Drawing.Size(50, 28);
+            this.ButRestart.Size = new System.Drawing.Size(75, 43);
             this.ButRestart.TabIndex = 3;
             this.ButRestart.Text = "Restart";
             this.ButRestart.UseVisualStyleBackColor = true;
@@ -144,20 +143,72 @@
             // ButClear
             // 
             this.ButClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButClear.Location = new System.Drawing.Point(8, 246);
-            this.ButClear.Margin = new System.Windows.Forms.Padding(2);
+            this.ButClear.Location = new System.Drawing.Point(12, 378);
             this.ButClear.Name = "ButClear";
-            this.ButClear.Size = new System.Drawing.Size(50, 28);
+            this.ButClear.Size = new System.Drawing.Size(75, 43);
             this.ButClear.TabIndex = 9;
             this.ButClear.Text = "Clear";
             this.ButClear.UseVisualStyleBackColor = true;
             this.ButClear.Click += new System.EventHandler(this.ButClear_Click);
             // 
+            // GrpBackground
+            // 
+            this.GrpBackground.Controls.Add(this.RdoToggle);
+            this.GrpBackground.Controls.Add(this.LblMilliseconds);
+            this.GrpBackground.Controls.Add(this.TxtTickTime);
+            this.GrpBackground.Controls.Add(this.ButTicker);
+            this.GrpBackground.Location = new System.Drawing.Point(498, 15);
+            this.GrpBackground.Name = "GrpBackground";
+            this.GrpBackground.Size = new System.Drawing.Size(121, 128);
+            this.GrpBackground.TabIndex = 10;
+            this.GrpBackground.TabStop = false;
+            this.GrpBackground.Text = "Ticker";
+            // 
+            // RdoToggle
+            // 
+            this.RdoToggle.AutoSize = true;
+            this.RdoToggle.Enabled = false;
+            this.RdoToggle.Location = new System.Drawing.Point(86, 47);
+            this.RdoToggle.Name = "RdoToggle";
+            this.RdoToggle.Size = new System.Drawing.Size(21, 20);
+            this.RdoToggle.TabIndex = 13;
+            this.RdoToggle.TabStop = true;
+            this.RdoToggle.UseVisualStyleBackColor = true;
+            // 
+            // LblMilliseconds
+            // 
+            this.LblMilliseconds.AutoSize = true;
+            this.LblMilliseconds.Location = new System.Drawing.Point(86, 96);
+            this.LblMilliseconds.Name = "LblMilliseconds";
+            this.LblMilliseconds.Size = new System.Drawing.Size(30, 20);
+            this.LblMilliseconds.TabIndex = 14;
+            this.LblMilliseconds.Text = "ms";
+            // 
+            // TxtTickTime
+            // 
+            this.TxtTickTime.Location = new System.Drawing.Point(6, 93);
+            this.TxtTickTime.MaxLength = 7;
+            this.TxtTickTime.Name = "TxtTickTime";
+            this.TxtTickTime.Size = new System.Drawing.Size(74, 26);
+            this.TxtTickTime.TabIndex = 12;
+            this.TxtTickTime.Text = "1000";
+            // 
+            // ButTicker
+            // 
+            this.ButTicker.Location = new System.Drawing.Point(5, 36);
+            this.ButTicker.Name = "ButTicker";
+            this.ButTicker.Size = new System.Drawing.Size(75, 43);
+            this.ButTicker.TabIndex = 11;
+            this.ButTicker.Text = "Run";
+            this.ButTicker.UseVisualStyleBackColor = true;
+            this.ButTicker.Click += new System.EventHandler(this.ButTicker_Click);
+            // 
             // FrmStopwatchTest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 285);
+            this.ClientSize = new System.Drawing.Size(632, 438);
+            this.Controls.Add(this.GrpBackground);
             this.Controls.Add(this.ButClear);
             this.Controls.Add(this.ButReset);
             this.Controls.Add(this.ButRestart);
@@ -169,11 +220,12 @@
             this.Controls.Add(this.ButStart);
             this.Controls.Add(this.LstStatus);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(250, 250);
+            this.MinimumSize = new System.Drawing.Size(364, 354);
             this.Name = "FrmStopwatchTest";
             this.Text = "Stopwatch Test";
             this.Load += new System.EventHandler(this.FrmStopwatchTest_Load);
+            this.GrpBackground.ResumeLayout(false);
+            this.GrpBackground.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,6 +243,12 @@
         private System.Windows.Forms.Button ButReset;
         private System.Windows.Forms.Button ButRestart;
         private System.Windows.Forms.Button ButClear;
+        private System.Windows.Forms.GroupBox GrpBackground;
+        private System.Windows.Forms.RadioButton RdoToggle;
+        private System.Windows.Forms.Label LblMilliseconds;
+        private System.Windows.Forms.TextBox TxtTickTime;
+        private System.Windows.Forms.Button ButTicker;
+        private System.ComponentModel.BackgroundWorker BgrdWorker;
     }
 }
 
